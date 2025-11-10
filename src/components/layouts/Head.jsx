@@ -1,21 +1,5 @@
 import React from 'react'
 
-import "../../assets/admin/css/bootstrap.min.css"
-import "../../assets/admin/fonts/icomoon/icomoon.css"
-import "../../assets/admin/css/main.min.css"
-
-import "../../assets/admin/js/jquery.js"
-import "../../assets/admin/js/bootstrap.min.js"
-import "../../assets/admin/vendor/unifyMenu/unifyMenu.js"
-// import "../../assets/admin/vendor/onoffcanvas/onoffcanvas.js"
-// import "../../assets/admin/js/moment.js"
-
-// import "../../assets/admin/vendor/slimscroll/slimscroll.min.js"
-// import "../../assets/admin/vendor/slimscroll/custom-scrollbar.js"
-
-
-// import "../../assets/admin/js/common.js"
-
 
 const Head = () => {
   return (
