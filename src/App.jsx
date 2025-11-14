@@ -1,53 +1,22 @@
-import AdminPanel from "../src/components/AdminPanel"
-import './App.css'
-import { BrowserRouter, Navigate, Route, Routes, Outlet } from "react-router-dom";
-import Dashboard from "./components/Dashboard";
-import Head  from "../src/components/layouts/Head";
-import Navbar  from "../src/components/layouts/Navbar";
-import Header  from "../src/components/layouts/Header";
-import Footer from "../src/components/layouts/Footer";
-
-import Lists from "./components/users/Lists";
-import Add from "./components/users/Add";
-import Import from "./components/users/Import";
-import Login from "./components/pages/Login";
-
-
-function Layout() {
-  return (
-    <>
-        <Head/>
-          <div className="app-wrap">
-            <div className="app-container">
-              <Navbar />
-                <div className="app-main">
-                  <Header />
-                  <Outlet /> {/* This renders child routes */}
-                </div>
-            </div>
-            <Footer />
-          </div>
-    </>
-  );
-}
+// App.jsx (Conceptual Routing)
+import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
+import Dashboard from './pages/Dashboard';
+import UserList from './pages/users/Lists'
+import UserAdd from './pages/users/Add';
+import UserImport from './pages/users/Import';
 
 function App() {
-
   return (
-   <BrowserRouter>
+    <Router>
       <Routes>
-          <Route path="/" element={<Navigate to="/login" replace />} />
-          <Route path="/login" element={<Login />} />
-        <Route element={<Layout />}>
-          
-          <Route path="/dashboard" element={<Dashboard />} />
-          <Route path="/users/lists" element={<Lists />} />
-          <Route path="/users/add" element={<Add />} />
-          <Route path="/users/import" element={<Import />} />
-        </Route>
+        <Route path="/" element={<Dashboard />} />
+        {/* User Routes */}
+        <Route path="/users/list" element={<UserList />} />
+        <Route path="/users/add" element={<UserAdd />} />
+        <Route path="/users/import" element={<UserImport />} />
+        {/* Add a 404 page route */}
       </Routes>
-    </BrowserRouter>
-  )
+    </Router>
+  );
 }
-
-export default App
+export default App;
